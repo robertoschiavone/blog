@@ -36,6 +36,7 @@ const Meta = () =>
           content="Artificial intelligence, programming, and other musings."
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL}/>
+      <meta name="robots" content="noindex"/>
     </Head>
 
 export default Meta
