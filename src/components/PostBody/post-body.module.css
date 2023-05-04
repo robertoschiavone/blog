@@ -2,13 +2,6 @@
   @apply text-lg leading-relaxed;
 }
 
-.markdown p,
-.markdown ul,
-.markdown ol,
-.markdown blockquote {
-  @apply my-6;
-}
-
 .markdown h2 {
   @apply font-bold text-3xl mt-12 mb-4 leading-snug;
 }
@@ -19,4 +12,14 @@
 .markdown a:hover {
   @apply underline;
   @apply decoration-red;
+}
+
+.markdown lic p {
+  @apply list-item;
+  @apply list-inside;
+  @apply list-disc;
+}
+
+.markdown [aria-hidden="true"] {
+  display: none;
 }

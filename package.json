@@ -1,11 +1,11 @@
 {
   "private": true,
   "name": "blog",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Artificial intelligence, programming, and other musings.",
   "author": "Roberto Schiavone",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -17,8 +17,13 @@
     "next": "^13.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.2"
+    "rehype-katex": "^6.0.3",
+    "rehype-mathjax": "^4.0.2",
+    "rehype-stringify": "^9.0.3",
+    "remark-math": "^5.1.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
