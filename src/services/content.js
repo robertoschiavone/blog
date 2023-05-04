@@ -1,5 +1,5 @@
 import fs from "fs"
-import {join} from "path"
+import path from "path"
 
 import matter from "gray-matter"
 import rehypeKatex from "rehype-katex"
@@ -9,12 +9,12 @@ import remarkRehype from "remark-rehype"
 import rehypeStringify from "rehype-stringify"
 import {unified} from "unified"
 
-const postsDirectory = join(process.cwd(), "content/posts")
+const postsDirectory = path.join(process.cwd(), "content/posts")
 
-const getPostSlugs = () => fs.readdirSync(postsDirectory)
+const getPostSlugs = () => (fs.readdirSync(postsDirectory) || []).map(post => path.parse(post).name)
 
 const getPostBySlug = (slug, fields = []) => {
-  const fullPath = join(postsDirectory, `${slug}.md`)
+  const fullPath = path.join(postsDirectory, `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const {data, content} = matter(fileContents)
 
