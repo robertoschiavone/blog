@@ -14,8 +14,7 @@
   @apply decoration-red;
 }
 
-.markdown lic p {
-  @apply list-item;
+.markdown li {
   @apply list-inside;
   @apply list-disc;
 }
