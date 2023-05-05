@@ -8,6 +8,7 @@ import Layout from "../../components/Layout"
 import PostTitle from "../../components/PostTitle"
 import Head from "next/head"
 import {getAllPosts, getPostBySlug, render} from "../../services/content"
+import SectionSeparator from "../../components/SectionSeparator";
 
 const Post = ({post, preview}) => {
   const router = useRouter()

@@ -1,19 +1,17 @@
-/** @type {import("tailwindcss").Config} */
 module.exports = {
   content: ["./src/components/**/*.js", "./src/pages/**/*.js"],
   theme: {
     extend: {
       colors: {
-        "background": "#0c1014",
-        "foreground": "#d3ebe9",
-        "red": "#c23127",
-        "orange": "#d26937",
-        "yellow": "#edb443",
-        "magenta": "#888ca6",
-        "violet": "#4e5166",
-        "blue": "#195466",
-        "cyan": "#33859E",
-        "green": "#2aa889"
+        "background": "#1e2326",
+        "foreground": "#d3c6aa",
+        "red": "#e67e80",
+        "orange": "#e69875",
+        "yellow": "#dbbc7f",
+        "green": "#a7c080",
+        "blue": "#7fbbb3",
+        "aqua": "#83c092",
+        "purple": "#d699b6"
       },
       spacing: {
         28: "7rem",
@@ -25,9 +23,10 @@ module.exports = {
         tight: 1.2,
       },
       fontSize: {
+        "2xl": "1.375rem",
         "5xl": "2.5rem",
         "6xl": "2.75rem",
-        "7xl": "4.5rem",
+        "7xl": "4.0rem",
         "8xl": "6.25rem",
       },
       boxShadow: {

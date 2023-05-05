@@ -1,5 +1,5 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-2xl leading-relaxed;
 }
 
 .markdown h2 {
