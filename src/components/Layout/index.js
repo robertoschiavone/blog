@@ -1,12 +1,12 @@
+import Header from "../Header";
 import Footer from "../Footer"
-import Meta from "../Meta"
+
+import styles from "./layout.module.css"
 
 const Layout = ({children}) =>
     <>
-      <Meta/>
-      <div className="min-h-screen">
-        <main>{children}</main>
-      </div>
+      <Header/>
+      <main className={styles["main"]}>{children}</main>
       <Footer/>
     </>
 

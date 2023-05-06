@@ -1,0 +1,9 @@
+.main {
+    /* Spacing: padding */
+    @apply px-11;
+
+    /* Spacing: margin */
+    @apply mt-11;
+    @apply mx-64;
+    @apply mb-32;
+}

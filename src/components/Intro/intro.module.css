@@ -1,0 +1,31 @@
+.hgroup {
+    /* Flexbox & Grid: flex direction */
+    @apply flex-col;
+    /* Flexbox & Grid: flex */
+    @apply flex;
+}
+
+.h1 {
+    /* Layout: box sizing */
+    @apply box-border;
+
+    /* Spacing: margin */
+    @apply mt-8;
+    @apply mb-6;
+
+    /* Typography: font family */
+    @apply font-serif;
+    /* Typography: font size */
+    @apply text-8xl;
+    /* Typography: line height */
+    @apply leading-none;
+}
+
+.h2 {
+    /* Typography: font size */
+    @apply text-3xl;
+    /* Typography: font weight */
+    @apply font-light;
+    /* Typography: line height */
+    @apply leading-normal;
+}

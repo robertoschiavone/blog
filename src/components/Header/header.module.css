@@ -1,0 +1,23 @@
+.header {
+    /* Flexbox & Grid: flex */
+    @apply flex;
+    /* Flexbox & Grid: justify content */
+    @apply justify-between;
+
+    /* Spacing: padding */
+    @apply px-8;
+    @apply py-6;
+
+    /* Typography: line height */
+    @apply leading-6;
+}
+
+.menu {
+    /* Flexbox & Grid: flex */
+    @apply flex;
+}
+
+.nav-link {
+    /* Spacing: margin */
+    @apply ml-6;
+}

@@ -1,10 +1,25 @@
+import styles from "./header.module.css"
+
 import Link from "next/link"
+import Image from "next/image";
 
 const Header = () =>
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <Link href="/" className="decoration-blue hover:underline">
-        Hello!
+    <header className={styles["header"]}>
+      <Link href="/">
+        <Image src="/assets/blog/rocket.gif" width={32} height={32} alt="logo"/>
       </Link>
-    </h2>
+      {false &&
+          <nav>
+            <menu className={styles["menu"]}>
+              <li>
+                <Link href="/blog" className={styles["nav-link"]}>Blog</Link>
+              </li>
+              <li>
+                <Link href="/about" className={styles["nav-link"]}>About</Link>
+              </li>
+            </menu>
+          </nav>
+      }
+    </header>
 
 export default Header

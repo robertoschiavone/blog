@@ -6,12 +6,14 @@ import Header from "./Header"
 import HeroPost from "./HeroPost"
 import Intro from "./Intro"
 import Layout from "./Layout"
-import Meta from "./Meta"
+import Head from "./Head"
 import MoreStories from "./MoreStories"
+import Notes from "./Notes"
 import PostBody from "./PostBody"
 import PostHeader from "./PostHeader"
 import PostPreview from "./PostPreview"
 import PostTitle from "./PostTitle"
+import Spacer from "./Spacer"
 
 export {
   Container,
@@ -20,12 +22,14 @@ export {
   Footer,
   Header,
   HeroPost,
+  Head,
   Intro,
   Layout,
-  Meta,
   MoreStories,
+  Notes,
   PostBody,
   PostHeader,
   PostPreview,
-  PostTitle
+  PostTitle,
+  Spacer
 }

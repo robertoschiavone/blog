@@ -1,53 +1,31 @@
-import fs from "fs"
-import path from "path"
-
-import matter from "gray-matter"
 import rehypeKatex from "rehype-katex"
 import remarkMath from "remark-math"
 import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
 import rehypeStringify from "rehype-stringify"
 import {unified} from "unified"
+import {client} from "./sanity/lib/client";
 
-const postsDirectory = path.join(process.cwd(), "content/posts")
+const getPostBySlug = async (slug, fields = []) => (await client.fetch(`*[_type == 'post' && 
+  slug.current == '${slug}'] {
+    ${fields.join(", \n")}
+  }`))[0]
 
-const getPostSlugs = () => (fs.readdirSync(postsDirectory) || []).map(post => path.parse(post).name)
-
-const getPostBySlug = (slug, fields = []) => {
-  const fullPath = path.join(postsDirectory, `${slug}.md`)
-  const fileContents = fs.readFileSync(fullPath, "utf8")
-  const {data, content} = matter(fileContents)
-
-  const items = {}
-
-  // ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = slug
-    }
-    if (field === "content") {
-      items[field] = content
-    }
-
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field]
-    }
-  })
-
-  return items
-}
-
-const getAllPosts = (fields = []) => {
-  let slugs = []
-  try {
-    slugs = getPostSlugs()
-  } catch (exception) {
-    console.error(exception.message)
+const getAllPosts = async (fields = []) => {
+  if (!fields.includes("_createdAt")) {
+    fields = [...fields, "_createdAt"]
   }
 
-  return slugs.map((slug) => getPostBySlug(slug, fields))
-      // sort posts by date in descending order
-      .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  const posts = await client.fetch(`*[_type == 'post'] {${fields.join(", \n")}} | order(_createdAt desc)`)
+
+  if (fields.includes("slug")) {
+    return posts.map(post => ({
+      ...post,
+      slug: post.slug.current
+    }))
+  } else {
+    return posts
+  }
 }
 
 const render = async markdown => (await unified()
@@ -59,7 +37,6 @@ const render = async markdown => (await unified()
     .process(markdown))
 
 export {
-  getPostSlugs,
   getPostBySlug,
   getAllPosts,
   render

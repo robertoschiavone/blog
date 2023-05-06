@@ -1,0 +1,49 @@
+.note {
+    /* Flexbox & Grid: flex */
+    @apply flex;
+
+    /* Spacing: padding */
+    @apply py-4;
+
+    /* Typography: font family */
+    @apply font-serif;
+    /* Typography: font size */
+    @apply text-2xl;
+    /* Typography: text color */
+    @apply hover:text-purple;
+
+    /* Transitions & Animation: transition property */
+    @apply transition-all;
+    /* Transitions & Animation: transition duration */
+    @apply duration-300;
+    /* Transitions & Animation: transition timing function */
+    @apply ease-in-out;
+    /* Transitions & Animation: transition delay */
+    @apply delay-0;
+
+    /* Borders: border width */
+    @apply border-0;
+    @apply hover:border-b-1;
+    /* Borders: border color */
+    @apply border-blue;
+    @apply hover:border-blue;
+}
+
+.note:hover {
+    transform: scale3d(1.02, 1.02, 1.02);
+}
+
+.icon {
+    /* Sizing: width */
+    @apply w-6;
+    /* Sizing: height */
+    @apply h-6;
+
+    /* SVG: stroke */
+    @apply stroke-blue;
+}
+
+.note-title {
+    /* Spacing: margin */
+    @apply ml-4;
+}
